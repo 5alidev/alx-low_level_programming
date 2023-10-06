@@ -8,8 +8,7 @@
 int main(void)
 {
 	char num = 48;
-	char alphabet = 97;
-	
+	char alphabet = 97;	
 	while (num <= 57)
 	{
 		putchar(num);

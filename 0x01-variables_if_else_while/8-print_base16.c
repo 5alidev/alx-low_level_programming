@@ -8,14 +8,14 @@
 int main(void)
 {
 	char num = 48;
-	char alphabet = 65;
+	char alphabet = 97;
 	
 	while (num <= 57)
 	{
 		putchar(num);
 		num++;
 	}
-	while (alphabet <= 70)
+	while (alphabet <= 102)
 	{
 		putchar(alphabet);
 		alphabet++;

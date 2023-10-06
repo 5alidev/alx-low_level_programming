@@ -10,12 +10,12 @@ int main(void)
 	char num = 48;
 	char alphabet = 97;
 	
-	while (num <= 57)
+	while(num <= 57)
 	{
 		putchar(num);
 		num++;
 	}
-	while (alphabet <= 102)
+	while(alphabet <= 102)
 	{
 		putchar(alphabet);
 		alphabet++;

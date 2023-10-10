@@ -4,7 +4,7 @@
  *
  * Return: Always 0 (Success)
  */
-int main (void)
+int main(void)
 {
 	char n[] = "_putchar";
 	int sizeOfc = sizeof(n) - 1;

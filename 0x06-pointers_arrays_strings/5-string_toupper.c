@@ -5,6 +5,7 @@
  * string_toupper - changes all lowercase letters
  * of a string to uppercase.
  *
+ * @s: character to change
  * Return: String with uppercase
  */
 char *string_toupper(char *s)
@@ -14,7 +15,7 @@ char *string_toupper(char *s)
 	sLen = strlen(s);
 	for (i = 0; i < sLen; i++)
 	{
-		if(islower(s[i]))
+		if (islower(s[i]))
 			s[i] = s[i] - 32;
 	}
 	return (s);

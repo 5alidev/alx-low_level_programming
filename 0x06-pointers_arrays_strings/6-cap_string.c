@@ -9,7 +9,7 @@
  */
 char *cap_string(char *s)
 {
-	int i, sLen;
+	int i, j, sLen;
 
 	sLen = strlen(s);
 	for (i = 0; i < sLen; i++)
@@ -19,16 +19,16 @@ char *cap_string(char *s)
 				|| s[i] == '(' || s[i] == ')' || s[i] == '{'
 				|| s[i] == '}')
 		{
-			if ((s[i + 1] >= 'a' && s[i + 1] <= 'z')
-					|| (s[i + 1] >= 'A' && s[i + 1] <= 'Z'))
+			j = i + 1;
+			while (s[j] != '\0' && !((s[j] >= 'a' && s[j] <= 'z')
+						|| (s[j] >= 'A' && s[j] <= 'Z')))
+				j++;
+			if (s[j] != '\0')
 			{
-				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
-					s[i + 1] = s[i + 1] - 32;
+				if (s[j] >= 'a' && s[j] <= 'z')
+					s[j] = s[j] - 'a' + 'A';
 			}
 		}
 	}
-	if ((s[0] >= 'a' && s[0] <= 'z') || (s[0] >= 'A' && s[0] <= 'Z'))
-		if (s[0] >= 'a' && s[0] <= 'z')
-			s[0] = s[0] - 32;
 	return (s);
 }

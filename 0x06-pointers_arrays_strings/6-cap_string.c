@@ -9,30 +9,18 @@
  */
 char *cap_string(char *s)
 {
-	int i, sLen;
+	int i, j;
+	char sep[] = " \t\n,;.!?\"(){}";
 
-	sLen = strlen(s);
-	for (i = 0; i < sLen; i++)
+	i = 1;
+	if (s[0] >= 'a' && s[0] <= 'z')
+		s[0] -= ('a' - 'A');
+	while (s[i] != '\0')
 	{
-		if (s[i] == ' ' || s[i] == ',' || s[i] == ';' || s[i] == '.' ||
-			s[i] == '!' || s[i] == '?' || s[i] == '\"' || s[i] == '(' ||
-			s[i] == ')' || s[i] == '{' || s[i] == '}')
-		{
-			int j = i + 1;
-
-			while (s[j] != '\0' && !(('a' <= s[j] && s[j] <= 'z')
-						|| ('A' <= s[j] && s[j] <= 'Z')))
-			{
-				j++;
-			}
-			if (s[j] != '\0')
-			{
-				if ('a' <= s[j] && s[j] <= 'z')
-				{
-					s[j] = s[j] - ('a' - 'A');
-				}
-			}
-		}
+		for (j = 0; sep[j] != '\0'; j++)
+			if (s[i - 1] == sep[j] && (s[i] >= 'a' && s[i] <= 'z'))
+				s[i] -= ('a' - 'A');
+		i++;
 	}
 	return (s);
 }

@@ -1,22 +1,22 @@
 #include "main.h"
 #include <string.h>
 /**
- * _stract - Concatenates two strings.
+ * _strcat - Concatenates two strings.
  *
  * @dest: destination string
  * @src: source string
  *
  * Return: String
  */
-char *_stract(char *dest, char *src)
+char *_strcat(char *dest, char *src)
 {
 	int i, destLen;
 
 	destLen = strlen(dest);
 	for (i = 0; src[i] != '\0'; i++)
 	{
-		dest[destLen + i] = src[i];
+		dest[destLen + i] = *(src + i);
 	}
-	dest[destLen + 1] = '\n';
+	dest[destLen + i] = '\0';
 	return (dest);
 }

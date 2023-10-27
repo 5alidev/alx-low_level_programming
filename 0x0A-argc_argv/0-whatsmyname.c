@@ -1,6 +1,10 @@
 #include <stdio.h>
 /**
- * main - Entry point
+ * main - program that prints its name,
+ * followed by a new line.
+ *
+ * @argc: arg count
+ * @argv: arg vector (array of strings)
  *
  * Return: Always 0 (Success)
  */

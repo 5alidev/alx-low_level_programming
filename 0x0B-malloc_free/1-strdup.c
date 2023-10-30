@@ -18,16 +18,16 @@ char *_strdup(char *str)
 	int i, strLength = strlen(str);
 
 	copy = malloc(sizeof(char) * strLength + 1);
-	if (copy == NULL)
-	{
-		return (NULL);
-	}
-	else
+	if (copy != NULL)
 	{
 		for (i = 0; i < strLength; i++)
 		{
 			copy[i] = str[i];
 		}
+	}
+	else
+	{
+		return (NULL);
 	}
 	copy[i] = '\0';
 	return (copy);

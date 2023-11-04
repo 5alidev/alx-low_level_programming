@@ -1,4 +1,6 @@
+#ifndef SRC_FILE_NAME
 #define SRC_FILE_NAME __BASE_FILE__
+#endif
 #include <stdio.h>
 
 /**

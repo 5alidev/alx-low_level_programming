@@ -19,7 +19,7 @@ int binary_search(int *array, size_t size, int value)
  * binary_search_ - helper function
  *
  * @array: array to search in
- * @value: value to search for
+ * @val: value to search for
  * @left: index of the left
  * @right: index of right
  *
@@ -27,14 +27,19 @@ int binary_search(int *array, size_t size, int value)
  */
 int binary_search_(int *array, int val, size_t left, size_t right)
 {
+	unsigned int i;
 	unsigned int mid = left + (right - left) / 2;
 
 	if (left > right)
 		return (-1);
+	printf("Searching in array: ");
+	for (i = left; i < right; i++)
+		printf("%d, ", array[i]);
+	printf("%d\n", array[i]);
 	if (array[mid] == val)
-		return mid;
+		return (mid);
 	else if (array[mid] > val)
 		return (binary_search_(array, val, left, mid - 1));
 	else
-		return (binary_search_(array, val, mid + 1, right)); 
+		return (binary_search_(array, val, mid + 1, right));
 }
